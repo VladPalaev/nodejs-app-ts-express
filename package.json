@@ -1,0 +1,10 @@
+{
+  "name": "test-nodejs-app-ts",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
