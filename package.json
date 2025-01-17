@@ -1,10 +1,20 @@
 {
-  "name": "test-nodejs-app-ts",
-  "version": "1.0.0",
-  "type": "module",
-  "scripts": {},
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+	"name": "test-nodejs-app-ts",
+	"version": "0.0.1",
+	"type": "module",
+	"scripts": {
+		"dev": "node --watch ./src/index.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"dependencies": {
+		"express": "^4.21.2"
+	},
+	"devDependencies": {
+		"@types/express": "^5.0.0",
+		"@types/node": "^22.10.7",
+		"typescript": "^5.7.3"
+	}
 }
