@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
+    "verbatimModuleSyntax": true, // Включает дословный синтаксис модулей (import {type IUser} from 'user.js'), объединяет несколько свойств для ускорения сборки
+	"esModuleInterop": true, // Включает совместимость с модулями ES import * as express from 'express'; вы можете использовать import express from 'express'
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "sourceMap": true,
+
+    "lib": ["ES5"],
+	// "types": [],
+    "skipLibCheck": true,
+
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+  },
+  "include": ["src/**/*"],
+}

@@ -3,7 +3,9 @@
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
-		"dev": "node --watch ./src/index.js"
+		"start": "node --enable-source-maps dist/index.js",
+		"build": "tsc",
+		"dev": ""
 	},
 	"keywords": [],
 	"author": "",
@@ -14,7 +16,6 @@
 	},
 	"devDependencies": {
 		"@types/express": "^5.0.0",
-		"@types/node": "^22.10.7",
 		"typescript": "^5.7.3"
 	}
 }

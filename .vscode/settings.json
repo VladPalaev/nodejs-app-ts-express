@@ -1,0 +1,4 @@
+{
+    "typescript.tsdk": "node_modules/typescript/lib", // указываем редактору использовать нашу версию ts, а не предустановленную у него
+	"typescript.enablePromptUseWorkspaceTsdk": true,
+}
