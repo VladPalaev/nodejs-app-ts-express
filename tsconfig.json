@@ -1,23 +1,28 @@
 {
-  "compilerOptions": {
-    "target": "ES5",
-    "module": "NodeNext",
-    "moduleResolution": "nodenext",
-    "verbatimModuleSyntax": true, // Включает дословный синтаксис модулей (import {type IUser} from 'user.js'), объединяет несколько свойств для ускорения сборки
-	"esModuleInterop": true, // Включает совместимость с модулями ES import * as express from 'express'; вы можете использовать import express from 'express'
-    "resolveJsonModule": true,
-    "forceConsistentCasingInFileNames": true,
+	"compilerOptions": {
+		"target": "ES2022",
+		// Значения "Node16"/"NodeNext" обеспечивают современный резолвинг,
+		// который поддерживает поля "exports" и "imports" из "package.json",
+		// а также включает необходимые проверки совместимости ESM и CJS.
+		// Для более обширной поддержки сред исполнения лучше выбрать "Node16".
+		"module": "NodeNext",
+		"moduleResolution": "nodenext",
+		"verbatimModuleSyntax": true, // Включает дословный синтаксис модулей (import {type IUser} from 'user.js'), объединяет несколько свойств для ускорения сборки
+		"esModuleInterop": true, // Включает совместимость с модулями ES import * as express from 'express'; вы можете использовать import express from 'express'
+		"resolveJsonModule": true,
+		"forceConsistentCasingInFileNames": true,
 
-    "rootDir": "./src",
-    "outDir": "./dist",
-    "sourceMap": true,
+		"rootDir": "./src",
+		"outDir": "./dist",
+		"sourceMap": true,
 
-    "lib": ["ES5"],
-	// "types": [],
-    "skipLibCheck": true,
+		"lib": ["ES5"],
+		// "types": [],
+		"skipLibCheck": true,
 
-    "strict": true,
-    "noUncheckedIndexedAccess": true,
-  },
-  "include": ["src/**/*"],
+		"strict": true,
+		"noUncheckedIndexedAccess": true,
+		"noImplicitOverride": true
+	},
+	"include": ["src/**/*"]
 }
