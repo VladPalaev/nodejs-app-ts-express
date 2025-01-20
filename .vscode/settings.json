@@ -1,4 +1,13 @@
 {
     "typescript.tsdk": "node_modules/typescript/lib", // указываем редактору использовать нашу версию ts, а не предустановленную у него
 	"typescript.enablePromptUseWorkspaceTsdk": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"prettier.resolveGlobalModules": false,
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	}
 }
