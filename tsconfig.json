@@ -1,14 +1,14 @@
 {
 	"compilerOptions": {
-		"target": "ES2022",
-		// Значения "Node16"/"NodeNext" обеспечивают современный резолвинг,
-		// который поддерживает поля "exports" и "imports" из "package.json",
-		// а также включает необходимые проверки совместимости ESM и CJS.
-		// Для более обширной поддержки сред исполнения лучше выбрать "Node16".
-		"module": "NodeNext",
-		"moduleResolution": "nodenext",
+		"target": "ES2020",
+		// Значения "Node16" обеспечивают современный резолвинг, который поддерживает поля "exports" и "imports" из "package.json",
+		// а также включает необходимые проверки совместимости ESM и CJS. Для более обширной поддержки сред исполнения лучше выбрать "Node16".
+		"module": "Node16",
+		"moduleResolution": "node16",
 		"verbatimModuleSyntax": true, // Включает дословный синтаксис модулей (import {type IUser} from 'user.js'), объединяет несколько свойств для ускорения сборки
+		// allowSynteticDefault по-умолчанию включается в esModuleInterop, вообще esmoduleInterop включается автоматические если moduleResolution node16
 		"esModuleInterop": true, // Включает совместимость с модулями ES import * as express from 'express'; вы можете использовать import express from 'express'
+
 		"resolveJsonModule": true,
 		"forceConsistentCasingInFileNames": true,
 
@@ -16,13 +16,21 @@
 		"outDir": "./dist",
 		"sourceMap": true,
 
-		"lib": ["ES5"],
-		// "types": [],
+		// сбрасывает значения lib, которые по-умолчанию устанавливает target. Так как это nodejs app, то я буду устанавливать
+		// типы @types/node@version, в index.d.ts файле этого пакета уже есть ссылка <reference lib="es2020" />
+		"lib": [],
+		// types: [] говорит компилятору ts, что ему нужно автоматически подключать типы из node_modules/@types.
+		// Вместо этого, я сам в коде либо import-рую тип, либо для неявных типов, наппример: node, jest, когда мы используем console.log
+		// мы не импортирует объект console, или методы descride, it из jest, тоже как правило явно не импортируются, поэтому такие
+		// типы нужно перечислять в массиве.
+		"types": ["node"],
 		"skipLibCheck": true,
 
 		"strict": true,
 		"noUncheckedIndexedAccess": true,
+		// "allowUnreachableCode": false,
 		"noImplicitOverride": true
 	},
-	"include": ["src/**/*"]
+	"include": ["src/**/*"],
+	"exclude": ["node_modules"]
 }
