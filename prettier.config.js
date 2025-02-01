@@ -8,6 +8,6 @@ const config = {
   arrowParens: 'avoid',
   bracketSameLine: false, // Заменяет устаревшее jsxBracketSameLine
   jsxSingleQuote: false,
-};
+}
 
-export default config;
+export default config

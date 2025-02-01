@@ -12,7 +12,8 @@
 		"resolveJsonModule": true,
 		"forceConsistentCasingInFileNames": true,
 
-		"rootDir": "./src",
+		"baseUrl": ".",
+		"rootDirs": ["./src", "./__tests__"],
 		"outDir": "./dist",
 		"sourceMap": true,
 
@@ -23,7 +24,11 @@
 		// Вместо этого, я сам в коде либо import-рую тип, либо для неявных типов, наппример: node, jest, когда мы используем console.log
 		// мы не импортирует объект console, или методы descride, it из jest, тоже как правило явно не импортируются, поэтому такие
 		// типы нужно перечислять в массиве.
-		"types": ["node"],
+		"types": ["node", "jest"],
+		"paths": {
+			"@app/*": ["src/*"],
+			"@components/*": ["src/components/*"]
+		},
 		"skipLibCheck": true,
 
 		"strict": true,
@@ -31,6 +36,11 @@
 		// "allowUnreachableCode": false,
 		"noImplicitOverride": true
 	},
-	"include": ["src/**/*"],
+	"include": ["src/**/*", "__tests__/**/*"],
 	"exclude": ["node_modules"]
+	// "ts-node": {
+	// 	// "experimentalSpecifierResolution": "node",,
+	// 	// "transpileOnly": true,,
+	// 	"esm": true
+	// }
 }

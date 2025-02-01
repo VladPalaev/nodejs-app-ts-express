@@ -2,11 +2,11 @@ import eslint from '@eslint/js'
 import tseslint from 'typescript-eslint'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 
-console.log('es')
+console.log('yes from eslint.config.js')
 
 export default tseslint.config(
   {
-    ignores: ['dist/*'],
+    ignores: ['dist/*', 'coverage/*'],
   },
   eslint.configs.recommended,
   tseslint.configs.strictTypeChecked,
