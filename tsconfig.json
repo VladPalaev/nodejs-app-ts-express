@@ -1,46 +1,32 @@
 {
+	"ts-node": {
+		"logError": true,
+		"require": ["tsconfig-paths/register"],
+		"transpileOnly": true
+	},
 	"compilerOptions": {
-		"target": "ES2020",
-		// Значения "Node16" обеспечивают современный резолвинг, который поддерживает поля "exports" и "imports" из "package.json",
-		// а также включает необходимые проверки совместимости ESM и CJS. Для более обширной поддержки сред исполнения лучше выбрать "Node16".
-		"module": "Node16",
-		"moduleResolution": "node16",
-		"verbatimModuleSyntax": true, // Включает дословный синтаксис модулей (import {type IUser} from 'user.js'), объединяет несколько свойств для ускорения сборки
-		// allowSynteticDefault по-умолчанию включается в esModuleInterop, вообще esmoduleInterop включается автоматические если moduleResolution node16
-		"esModuleInterop": true, // Включает совместимость с модулями ES import * as express from 'express'; вы можете использовать import express from 'express'
-
+		"target": "ES2021",
+		"module": "CommonJS",
+		"moduleResolution": "node10",
+		"esModuleInterop": true,
+		"isolatedModules": true,
 		"resolveJsonModule": true,
 		"forceConsistentCasingInFileNames": true,
-
-		"baseUrl": ".",
-		"rootDirs": ["./src", "./__tests__"],
+		"baseUrl": "./src",
+		"rootDir": "./src",
 		"outDir": "./dist",
 		"sourceMap": true,
-
-		// сбрасывает значения lib, которые по-умолчанию устанавливает target. Так как это nodejs app, то я буду устанавливать
-		// типы @types/node@version, в index.d.ts файле этого пакета уже есть ссылка <reference lib="es2020" />
 		"lib": [],
-		// types: [] говорит компилятору ts, что ему нужно автоматически подключать типы из node_modules/@types.
-		// Вместо этого, я сам в коде либо import-рую тип, либо для неявных типов, наппример: node, jest, когда мы используем console.log
-		// мы не импортирует объект console, или методы descride, it из jest, тоже как правило явно не импортируются, поэтому такие
-		// типы нужно перечислять в массиве.
-		"types": ["node", "jest"],
+		"types": ["node"],
 		"paths": {
-			"@app/*": ["src/*"],
-			"@components/*": ["src/components/*"]
+			"@components/*": ["components/*"],
+			"@utils/*": ["utils/*"]
 		},
 		"skipLibCheck": true,
-
 		"strict": true,
 		"noUncheckedIndexedAccess": true,
-		// "allowUnreachableCode": false,
 		"noImplicitOverride": true
 	},
-	"include": ["src/**/*", "__tests__/**/*"],
+	"include": ["src/**/*"],
 	"exclude": ["node_modules"]
-	// "ts-node": {
-	// 	// "experimentalSpecifierResolution": "node",,
-	// 	// "transpileOnly": true,,
-	// 	"esm": true
-	// }
 }

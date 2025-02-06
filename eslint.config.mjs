@@ -36,7 +36,7 @@ export default tseslint.config(
     },
   },
   {
-    files: ['**/*.js'],
+    files: ['**/*.js', '**/*.mjs'], // написать нормальную регулярку
     extends: [tseslint.configs.disableTypeChecked],
   },
   eslintPluginPrettierRecommended,
