@@ -2,7 +2,7 @@
 	"name": "test-nodejs-app-ts",
 	"version": "0.0.1",
 	"main": "./src/index.ts",
-	"type": "commonjs",
+	"type": "module",
 	"scripts": {
 		"start": "TS_NODE_BASEURL=./dist node --enable-source-maps -r tsconfig-paths/register dist/index.js",
 		"build": "rm -rf dist && tsc --project ./tsconfig.build.json",
