@@ -5,6 +5,8 @@
 		"transpileOnly": true
 	},
 	"compilerOptions": {
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
 		"target": "ES2021",
 		"module": "CommonJS",
 		"moduleResolution": "node10",
@@ -17,7 +19,7 @@
 		"outDir": "./dist",
 		"sourceMap": true,
 		"lib": [],
-		"types": ["node"],
+		"types": ["node", "jest"],
 		"paths": {
 			"@components/*": ["components/*"],
 			"@utils/*": ["utils/*"]
