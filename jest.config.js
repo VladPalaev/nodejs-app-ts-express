@@ -1,8 +1,8 @@
-import { createDefaultPreset, pathsToModuleNameMapper } from 'ts-jest'
+import { createDefaultEsmPreset, pathsToModuleNameMapper } from 'ts-jest'
 import tsconfig from './tsconfig.json' with { type: 'json' }
 
-// отключает type checking ts с помощью isolatedModules
-const presetConfig = createDefaultPreset({ isolatedModules: true })
+// отключает type checking ts с помощью isolatedModules если нужна скорость
+const presetConfig = createDefaultEsmPreset({ isolatedModules: true })
 
 /** @type {import('ts-jest').JestConfigWithTsJest} **/
 const jestConfig = {

@@ -6,7 +6,7 @@
 	"scripts": {
 		"start": "node --enable-source-maps  dist/index.js",
 		"build": "rm -rf dist && tsc --project ./tsconfig.build.json && tsc-alias",
-		"test": "jest",
+		"test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
 		"dev": "tsx watch ./src/index.ts",
 		"type:check": "tsc --noEmit",
 		"eslint:check": "eslint",
